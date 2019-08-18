@@ -89,30 +89,111 @@ comments
   console.log('Ahora la variable "i" es igual a ' + i);
 
   //Comparadores
-  if (e === 1) {
-    alert('Está todo piola con e')
-  } else {
-    alert('No está todo piola con e')
-  }; //En este caso no está todo piola con e.
+  // if (e === 1) {
+  //   alert('Está todo piola con e')
+  // } else {
+  //   alert('No está todo piola con e')
+  // }; //En este caso no está todo piola con e.
+  //
+  // if (e !== 1) {
+  //   alert('Está todo piola con e')
+  // } else {
+  //   alert('No está todo piola con e')
+  // }; //En este caso está todo piola con e.
+  //
+  // if (e <= 1) {
+  //   alert('Está todo piola con e')
+  // } else {
+  //   alert('No está todo piola con e')
+  // }; //En este caso no está todo piola con e.
+  //
+  // if (e >= 1) {
+  //   alert('Está todo piola con e')
+  // } else {
+  //   alert('No está todo piola con e')
+  // }; //En este caso está todo piola con e.
 
-  if (e !== 1) {
-    alert('Está todo piola con e')
-  } else {
-    alert('No está todo piola con e')
-  }; //En este caso está todo piola con e.
 
-  if (e <= 1) {
-    alert('Está todo piola con e')
-  } else {
-    alert('No está todo piola con e')
-  }; //En este caso no está todo piola con e.
+//FUNCIONES
+  function hola(nombre, apellido){
+    return 'Hola ' + nombre + ' ' + apellido;
+  };
+  //La llamamos en la consola de la siguiente manera: "hola(Emiliano,Baier);".
 
-  if (e >= 1) {
-    alert('Está todo piola con e')
-  } else {
-    alert('No está todo piola con e')
-  }; //En este caso está todo piola con e.
+  //Invocamos una función automáticamente
+  (function(){
+    //alert('Que se yo');
+  }());
 
+  //Asignación a variables
+  var calc = function calculador(a,b){
+    return a+b;
+  };
+  //La llamamos en la consola de la siguiente manera: "calc(7,9);".
+
+  //Asignación a variables
+  var calc = function (a,b){
+    return a+b;
+  };
+  //Si no le ponemos nombre a la funcifunción se la denomina "función anónima".
+
+  //Callbakc
+  /* $('#button').click(function(){
+     //bloque de la función
+  });
+   */
+  //El callback va a ejecutar la función cuando se haga click en el botón indicado.
+
+
+//SCOPE
+  //Variable global
+  var a = 0;
+  var b = 1;
+  //Declaradas de esta manera las funciones tendrán un scope global. Las llammamos en la consola de la siguiente manera: "window.a;" y "window.b;".
+
+  //Variable local
+  function test(){
+    var test = 'test';
+  };
+
+
+//STRICT MODE = Nos previene de cometer erroes como: Crear variables globales accidentalmente, de duplicar nombres de parámetros, de usar Keywords de JS como nombre de funciones, entre otros erroes.
+  // (function(){
+  //   'use strict'; //De esta manera se implementa el Strict mode. En este caso previene que "sMode" sea una variable global.
+  //   sMode = 'Strict mode';
+  // }());
+  //
+  // (function(){
+  //   'use strict'; //En este caso evita la repetición del nombre de los parámetros.
+  //   function test1 (a,a){
+  //     console.log();
+  //   };
+  // }());
+  //
+  // (function(){
+  //   'use strict'; //En este caso nos previene de usar la palabra clave "function" como nombre de la función.
+  //   var function = 'funcion';
+  // }());
+
+
+//IF & ELSE IF
+  (function(){
+    var variable = 1;
+    if (variable) {
+      console.log('true');
+    };
+
+    if (variable) {
+      console.log('true');
+    } else if (variable != 1) {
+      console.log('false');
+    };
+  }());
+
+  //if Ternario
+  (function(){
+    (false) ? console.log('true') : console.log('false');
+  }());
 
 //ELEMENTOS
   var newElement = document.createElement('li');
