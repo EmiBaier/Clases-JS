@@ -195,6 +195,7 @@ comments
     (false) ? console.log('true') : console.log('false');
   }());
 
+
 //ELEMENTOS
   var newElement = document.createElement('li');
   newElement.textContent = 'Now i´m first ;)';
