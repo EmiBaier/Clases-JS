@@ -196,6 +196,77 @@ comments
   }());
 
 
+//FOR - FOR IN - FOR OF
+
+  //For
+  var arrayDePrueba = ['item1','item2','item3'];
+  var largoArrayDePrueba = arrayDePrueba.length;
+
+  for (var i = 0; i < largoArrayDePrueba; i++) {
+    console.log(arrayDePrueba[i]);
+  }
+
+  //For in
+  var auto = {marca: "Fiat", modelo: 550, color: "blanco"}; //Objeto
+
+  for (var caracteristica in auto) {
+    console.log(auto[caracteristica]);
+  };
+
+  //for of
+  var cars = ['BMW', 'Volvo', 'Mini Cooper']; //Objeto
+
+  for (marcas of cars) {
+    console.log(marcas);
+  };
+
+
+//STRINGS (manipulación)
+  var myString = "Hola cara de nepe :)";
+  var myString2 = "          prueba trim 2          ";
+
+  console.log(myString);
+  console.log(myString.length); //Nos dice la cantidad de caracteres que tenemos en la variable (contando los espacios y empezando desde el índice 0).
+  console.log(myString.toUpperCase()); //Convierte toda la cadena de texto a mayúsculas.
+  console.log(myString.toLowerCase()); //Convierte las mayúsculas que haya en la cadena a minúsculas.
+  console.log(myString.indexOf('nepe')); //Nos dice en que posición (índice) se encuentra el primer caracter de la palabra que pasamos como parámetro, en este caso la "n".
+
+  console.log(myString.split(' '));  //Convierte nuestra cadena de texto en un array, separando las palabras por el caracter que pasamos como parámtero, en este caso el espacio.
+  // Otro ejemplo de split:
+  console.log(myString.split(" ", 3)); // myString.split('separador', limite);
+
+  console.log(myString.slice(3, 8)); // Imprime el contenido del array en la consola comenzando por el caracter cuyo índice indicamos como primer parámetro y detenidose en el índice que indicamos como segundo parámetro.
+  console.log(myString.slice(2, -8)); // lo que hace el valor negativo es contar desde el final del string para atrás.
+
+  console.log('    prueba trim    '.trim()); // Elimina los esapcios y tabulaciones de mas, no elimina los espacions entre palabras.
+  console.log(myString2.trim());
+
+
+//ARRAYS (manipulación)
+  var array = [1,2,3];
+
+  /*
+  Mutadores de arrays
+  array.push(4);
+  array.unshift(0);
+  array.pop();
+  array.shift();
+  array.push(1,0,'hola');
+  array.revert();
+  array.sort();
+
+  Accesos a arrays
+  array.join();
+  array.indexOf();
+  array.filter();
+  */
+
+  console.log(array.join());
+  console.log(array.join(''));
+  console.log(array.join('-'));
+  console.log(array.indexOf(2));
+
+
 //ELEMENTOS
   var newElement = document.createElement('li');
   newElement.textContent = 'Now i´m first ;)';
