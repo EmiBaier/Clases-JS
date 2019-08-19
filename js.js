@@ -267,19 +267,67 @@ comments
   console.log(array.indexOf(2));
 
 
+// DOM (manupulación)
+  // Selección de elementos del DOM
+  var dameElementById = document.getElementById('titulo2');
+  var dameElementsByClassName = document.getElementsByClassName('titulo')[0]; // El cero es para seleccionar qué elemento queremos seleccionar debido a que "console.log(dameElementsByClassName.className);" devuelve una lista de elementos.
+  var dameElementsByTagName = document.getElementsByTagName('li');
+  var dameElementsByName = document.getElementsByName('createElement');
+
+  // console.log(getElementById);
+  // console.log(getElementsByClassName);
+  // console.log(getElementsByTagName);
+  // console.log(getElementsByName);
+
+  console.log(dameElementById.id); // De esta manera conseguimos el id de la variable "dameElementById".
+  dameElementById.id = 'nuevo-id'; // Cambiamos el id del elemento.
+  console.log(dameElementById.id);
+  console.log(dameElementsByClassName.className); // Devuelve la clase del elemento.
+  console.log(dameElementsByClassName.classList); // Devuelve una lista con las clases del elemento.
+  dameElementsByClassName.classList.add('nueva/clase'); // Agregamos una nueva clase al elemento.
+  dameElementsByClassName.classList.remove('nueva/clase');
+  console.log(dameElementsByClassName.tagName);
+  console.log(dameElementsByClassName.classList);
+  // dameElementById.innerHTML = 'Nuevo contenido'; // Agregamos contenido al elemento.
+  // dameElementById.outerHTML = '<p>Nuevo contenido</p>'; // Reemplazamos el elemento.
+  // console.log(dameElementById);
+  dameElementById.setAttribute('name','value'); // Agregamos el "name value" al elemento.
+  dameElementById.removeAttribute('name'); // Eliminamos el "name value" al elemento.
+  console.log(dameElementById.hasAttribute('id')); // Verificamos la eistencia de id del elemento, imprime "true" o "false".
+
+
+// DOM Traversal
+  var element = document.getElementById('element');
+  element.style.backgroundColor = 'red';
+  console.log(element.childNodes);
+  console.log(element.children);
+  element.children[0].style.backgroundColor = 'blue'; // "children" nos va a devolver un NodeLista, con "children[0]" seleccionamos de la lista que elemento queremos.
+  element.children[0].style.color = 'white';
+  console.log(element.nextSibling); // Devuelve #text.
+  console.log(element.nextElementSibling); // Devuelve el siguiente elemento.
+  element.nextElementSibling.style.backgroundColor = '#CCC';
+  element.previousElementSibling.style.backgroundColor = '#CCC'; // Le damos estilo al elemento anterior.
+  console.log(element.parentNode); // Seleccionamos al elemento padre.
+  console.log(element.parentNode.nextElementSibling); // Seleccionamos el siguiente elemento padre.
+
+
 //ELEMENTOS
   var newElement = document.createElement('li');
-  newElement.textContent = 'Now i´m first ;)';
-
+  newElement.textContent = 'Now i´m first';
   var list = document.getElementById('mi-lista');
   // list.appendChild(newElement);
-
   list.insertBefore(newElement,list.firstElementChild);
-
   //list.removeChild(newElement);
-
   var replaceElement = document.createElement('li');
   replaceElement.textContent = 'Soy el nuevo objeto';
   list.replaceChild(replaceElement,newElement);
 
   console.log(newElement);
+
+//DOM EVENTS
+  // Clase 16: Tiene mas contenido.
+  var boton = document.getElementById('el-boton');
+
+  boton.addEventListener('click', function(){
+    alert('click');
+  });
